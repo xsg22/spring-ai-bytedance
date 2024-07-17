@@ -241,7 +241,8 @@ public class ByteDanceChatModel extends
         ByteDanceChatApi.ChatCompletionRequest request = new ByteDanceChatApi.ChatCompletionRequest(chatCompletionMessages, stream);
 
         if (prompt.getOptions() != null) {
-            if (prompt.getOptions() instanceof ChatOptions runtimeOptions) {
+            if (prompt.getOptions() != null) {
+                ChatOptions runtimeOptions = prompt.getOptions();
                 ByteDanceChatOptions updatedRuntimeOptions = ModelOptionsUtils.copyToTarget(runtimeOptions,
                         ChatOptions.class, ByteDanceChatOptions.class);
 

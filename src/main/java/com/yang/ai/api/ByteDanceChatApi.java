@@ -23,8 +23,10 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.yang.ai.api.common.ByteDanceApiConstants;
 import org.springframework.ai.model.ModelOptionsUtils;
 import org.springframework.ai.retry.RetryUtils;
+import org.springframework.ai.util.api.ApiUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.util.Assert;
@@ -56,12 +58,12 @@ public class ByteDanceChatApi {
     private WebClient webClient;
 
     /**
-     * 创建一个新的聊天完成api，默认URL设置为https://ark.cn-beijing.volces.com
+     * 创建一个新的聊天完成api，默认URL设置为 https://ark.cn-beijing.volces.com
      *
      * @param apiKey ByteDance apiKey.
      */
     public ByteDanceChatApi(String apiKey) {
-        this(ApiUtils.DEFAULT_BASE_URL, apiKey);
+        this(ByteDanceApiConstants.DEFAULT_BASE_URL, apiKey);
     }
 
     /**
