@@ -4,7 +4,7 @@
 
     <groupId>com.yang.ai</groupId>
     <artifactId>spring-ai-bytedance</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Spring AI Model - Byte Dance</name>
 
@@ -14,10 +14,9 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-
+        <!--依赖包-->
         <spring-boot.version>3.3.0</spring-boot.version>
-        <spring-ai.version>1.0.0-SNAPSHOT</spring-ai.version>
-        <victools.version>4.31.1</victools.version>
+        <spring-ai.version>1.0.0.M1</spring-ai.version>
 
         <!-- plugin versions -->
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
@@ -50,7 +49,6 @@
             <version>${spring-ai.version}</version>
         </dependency>
 
-        <!-- NOTE: Required only by the @ConstructorBinding. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
@@ -62,18 +60,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.victools</groupId>
-            <artifactId>jsonschema-generator</artifactId>
-            <version>${victools.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.github.victools</groupId>
-            <artifactId>jsonschema-module-jackson</artifactId>
-            <version>${victools.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
@@ -82,36 +68,17 @@
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- test dependencies -->
         <dependency>
             <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-test</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-qdrant-store</artifactId>
-            <version>${project.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.ai</groupId>
-                    <artifactId>spring-ai-openai</artifactId>
-                </exclusion>
-            </exclusions>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>qdrant</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>testcontainers</artifactId>
+            <version>${spring-ai.version}</version>
             <scope>test</scope>
         </dependency>
 
