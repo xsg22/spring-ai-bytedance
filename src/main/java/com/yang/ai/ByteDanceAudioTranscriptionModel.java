@@ -49,14 +49,12 @@ import org.springframework.retry.support.RetryTemplate;
 import org.springframework.util.Assert;
 
 /**
- * OpenAI audio transcription client implementation for backed by {@link ByteDanceAudioApi}.
+ * ByteDance audio transcription client implementation for backed by {@link ByteDanceAudioApi}.
  * You provide as input the audio file you want to transcribe and the desired output file
  * format of the transcription of the audio.
  *
- * @author Michael Lavelle
- * @author Christian Tzolov
+ * @author xsg
  * @see ByteDanceAudioApi
- * @since 0.8.1
  */
 public class ByteDanceAudioTranscriptionModel implements Model<AudioTranscriptionPrompt, AudioTranscriptionResponse> {
 
@@ -69,7 +67,7 @@ public class ByteDanceAudioTranscriptionModel implements Model<AudioTranscriptio
 	private final ByteDanceAudioApi audioApi;
 
 	/**
-	 * OpenAiAudioTranscriptionModel is a client class used to interact with the OpenAI
+	 * ByteDanceAudioTranscriptionModel is a client class used to interact with the ByteDance
 	 * Audio Transcription API.
 	 * @param audioApi The ByteDanceAudioApi instance to be used for making API calls.
 	 */
@@ -84,7 +82,7 @@ public class ByteDanceAudioTranscriptionModel implements Model<AudioTranscriptio
 	}
 
 	/**
-	 * OpenAiAudioTranscriptionModel is a client class used to interact with the OpenAI
+	 * ByteDanceAudioTranscriptionModel is a client class used to interact with the ByteDance
 	 * Audio Transcription API.
 	 * @param audioApi The ByteDanceAudioApi instance to be used for making API calls.
 	 * @param options The ByteDanceAudioTranscriptionOptions instance for configuring the
@@ -95,7 +93,7 @@ public class ByteDanceAudioTranscriptionModel implements Model<AudioTranscriptio
 	}
 
 	/**
-	 * OpenAiAudioTranscriptionModel is a client class used to interact with the OpenAI
+	 * ByteDanceAudioTranscriptionModel is a client class used to interact with the ByteDance
 	 * Audio Transcription API.
 	 * @param audioApi The ByteDanceAudioApi instance to be used for making API calls.
 	 * @param options The ByteDanceAudioTranscriptionOptions instance for configuring the
@@ -105,7 +103,7 @@ public class ByteDanceAudioTranscriptionModel implements Model<AudioTranscriptio
 	public ByteDanceAudioTranscriptionModel(ByteDanceAudioApi audioApi, ByteDanceAudioTranscriptionOptions options,
                                             RetryTemplate retryTemplate) {
 		Assert.notNull(audioApi, "ByteDanceAudioApi must not be null");
-		Assert.notNull(options, "OpenAiTranscriptionOptions must not be null");
+		Assert.notNull(options, "ByteDanceTranscriptionOptions must not be null");
 		Assert.notNull(retryTemplate, "RetryTemplate must not be null");
 		this.audioApi = audioApi;
 		this.defaultOptions = options;
