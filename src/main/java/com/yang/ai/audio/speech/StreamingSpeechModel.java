@@ -20,7 +20,7 @@ import org.springframework.ai.model.StreamingModel;
 import reactor.core.publisher.Flux;
 
 /**
- * The {@link StreamingSpeechModel} interface provides a way to interact with the OpenAI
+ * The {@link StreamingSpeechModel} interface provides a way to interact with the ByteDance
  * Text-to-Speech (TTS) API using a streaming approach, allowing you to receive the
  * generated audio in a real-time fashion.
  *
@@ -41,7 +41,7 @@ public interface StreamingSpeechModel extends StreamingModel<SpeechPrompt, Speec
 	}
 
 	/**
-	 * Sends a speech request to the OpenAI TTS API and returns a stream of the resulting
+	 * Sends a speech request to the ByteDance TTS API and returns a stream of the resulting
 	 * speech responses.
 	 * @param prompt the speech prompt containing the input text and other parameters
 	 * @return a Flux of speech responses, each containing a portion of the generated

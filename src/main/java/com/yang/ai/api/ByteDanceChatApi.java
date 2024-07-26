@@ -23,10 +23,10 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.yang.ai.api.common.ApiUtils;
 import com.yang.ai.api.common.ByteDanceApiConstants;
 import org.springframework.ai.model.ModelOptionsUtils;
 import org.springframework.ai.retry.RetryUtils;
-import org.springframework.ai.util.api.ApiUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.util.Assert;
@@ -63,7 +63,7 @@ public class ByteDanceChatApi {
      * @param apiKey ByteDance apiKey.
      */
     public ByteDanceChatApi(String apiKey) {
-        this(ByteDanceApiConstants.DEFAULT_BASE_URL, apiKey);
+        this(ByteDanceApiConstants.DEFAULT_CHAT_BASE_URL, apiKey);
     }
 
     /**

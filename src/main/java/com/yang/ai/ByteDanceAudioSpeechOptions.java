@@ -19,13 +19,14 @@ package com.yang.ai;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.yang.ai.api.ByteDanceAudioApi;
-import com.yang.ai.api.ByteDanceAudioApi.SpeechRequest.AudioResponseFormat;
-import com.yang.ai.api.ByteDanceAudioApi.SpeechRequest.Voice;
+import com.yang.ai.api.ByteDanceAudioApi.SpeechRequest.*;
 import org.springframework.ai.model.ModelOptions;
+
+import java.util.Objects;
 
 
 /**
- * Options for OpenAI text to audio - speech synthesis.
+ * Options for ByteDance text to audio - speech synthesis.
  *
  * @author Ahmed Yousri
  * @author Hyunjoon Choi
@@ -38,35 +39,28 @@ public class ByteDanceAudioSpeechOptions implements ModelOptions {
 	 * ID of the model to use for generating the audio. One of the available TTS models:
 	 * tts-1 or tts-1-hd.
 	 */
-	@JsonProperty("model")
-	private String model;
+	@JsonProperty("app")
+	private App app;
 
 	/**
 	 * The input text to synthesize. Must be at most 4096 tokens long.
 	 */
-	@JsonProperty("input")
-	private String input;
+	@JsonProperty("user")
+	private User user;
 
 	/**
 	 * The voice to use for synthesis. One of the available voices for the chosen model:
 	 * 'alloy', 'echo', 'fable', 'onyx', 'nova', and 'shimmer'.
 	 */
-	@JsonProperty("voice")
-	private Voice voice;
+	@JsonProperty("audio")
+	private Audio audio;
 
 	/**
 	 * The format of the audio output. Supported formats are mp3, opus, aac, and flac.
 	 * Defaults to mp3.
 	 */
 	@JsonProperty("response_format")
-	private AudioResponseFormat responseFormat;
-
-	/**
-	 * The speed of the voice synthesis. The acceptable range is from 0.0 (slowest) to 1.0
-	 * (fastest). Defaults to 1
-	 */
-	@JsonProperty("speed")
-	private Float speed;
+	private Request request;
 
 	public static Builder builder() {
 		return new Builder();
@@ -76,133 +70,83 @@ public class ByteDanceAudioSpeechOptions implements ModelOptions {
 
 		private final ByteDanceAudioSpeechOptions options = new ByteDanceAudioSpeechOptions();
 
-		public Builder withModel(String model) {
-			options.model = model;
+		public Builder withApp(App app) {
+			options.app = app;
 			return this;
 		}
 
-		public Builder withInput(String input) {
-			options.input = input;
+		public Builder withUser(User user) {
+			options.user = user;
 			return this;
 		}
 
-		public Builder withVoice(Voice voice) {
-			options.voice = voice;
+		public Builder withAudio(Audio audio) {
+			options.audio = audio;
 			return this;
 		}
 
-		public Builder withResponseFormat(AudioResponseFormat responseFormat) {
-			options.responseFormat = responseFormat;
-			return this;
-		}
-
-		public Builder withSpeed(Float speed) {
-			options.speed = speed;
+		public Builder withRequest(Request request) {
+			options.request = request;
 			return this;
 		}
 
 		public ByteDanceAudioSpeechOptions build() {
 			return options;
 		}
-
 	}
 
-	public String getModel() {
-		return model;
+	public App getApp() {
+		return app;
 	}
 
-	public String getInput() {
-		return input;
+	public void setApp(App app) {
+		this.app = app;
 	}
 
-	public Voice getVoice() {
-		return voice;
+	public User getUser() {
+		return user;
 	}
 
-	public AudioResponseFormat getResponseFormat() {
-		return responseFormat;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public Float getSpeed() {
-		return speed;
+	public Audio getAudio() {
+		return audio;
+	}
+
+	public void setAudio(Audio audio) {
+		this.audio = audio;
+	}
+
+	public Request getRequest() {
+		return request;
+	}
+
+	public void setRequest(Request request) {
+		this.request = request;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		ByteDanceAudioSpeechOptions that = (ByteDanceAudioSpeechOptions) o;
+		return Objects.equals(app, that.app) && Objects.equals(user, that.user) && Objects.equals(audio, that.audio) && Objects.equals(request, that.request);
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((model == null) ? 0 : model.hashCode());
-		result = prime * result + ((input == null) ? 0 : input.hashCode());
-		result = prime * result + ((voice == null) ? 0 : voice.hashCode());
-		result = prime * result + ((responseFormat == null) ? 0 : responseFormat.hashCode());
-		result = prime * result + ((speed == null) ? 0 : speed.hashCode());
-		return result;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-	}
-
-	public void setVoice(Voice voice) {
-		this.voice = voice;
-	}
-
-	public void setResponseFormat(AudioResponseFormat responseFormat) {
-		this.responseFormat = responseFormat;
-	}
-
-	public void setSpeed(Float speed) {
-		this.speed = speed;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ByteDanceAudioSpeechOptions other = (ByteDanceAudioSpeechOptions) obj;
-		if (model == null) {
-			if (other.model != null)
-				return false;
-		}
-		else if (!model.equals(other.model))
-			return false;
-		if (input == null) {
-			if (other.input != null)
-				return false;
-		}
-		else if (!input.equals(other.input))
-			return false;
-		if (voice == null) {
-			if (other.voice != null)
-				return false;
-		}
-		else if (!voice.equals(other.voice))
-			return false;
-		if (responseFormat == null) {
-			if (other.responseFormat != null)
-				return false;
-		}
-		else if (!responseFormat.equals(other.responseFormat))
-			return false;
-		if (speed == null) {
-			return other.speed == null;
-		}
-		else
-			return speed.equals(other.speed);
+		return Objects.hash(app, user, audio, request);
 	}
 
 	@Override
 	public String toString() {
-		return "OpenAiAudioSpeechOptions{" + "model='" + model + '\'' + ", input='" + input + '\'' + ", voice='" + voice
-				+ '\'' + ", responseFormat='" + responseFormat + '\'' + ", speed=" + speed + '}';
+		return "ByteDanceAudioSpeechOptions{" +
+				"app=" + app +
+				", user=" + user +
+				", audio=" + audio +
+				", request=" + request +
+				'}';
 	}
-
 }

@@ -4,7 +4,7 @@
 
     <groupId>com.yang.ai</groupId>
     <artifactId>spring-ai-bytedance</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-audio-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Spring AI Model - Byte Dance</name>
 
@@ -75,6 +75,12 @@
         </dependency>
 
         <!-- test dependencies -->
+        <dependency>
+            <groupId>javazoom</groupId>
+            <artifactId>jlayer</artifactId>
+            <version>1.0.1</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-test</artifactId>

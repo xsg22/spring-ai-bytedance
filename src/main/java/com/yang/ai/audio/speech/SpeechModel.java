@@ -19,7 +19,7 @@ package com.yang.ai.audio.speech;
 import org.springframework.ai.model.Model;
 
 /**
- * The {@link SpeechModel} interface provides a way to interact with the OpenAI
+ * The {@link SpeechModel} interface provides a way to interact with the ByteDance
  * Text-to-Speech (TTS) API. It allows you to convert text input into lifelike spoken
  * audio.
  *
@@ -40,7 +40,7 @@ public interface SpeechModel extends Model<SpeechPrompt, SpeechResponse> {
 	}
 
 	/**
-	 * Sends a speech request to the OpenAI TTS API and returns the resulting speech
+	 * Sends a speech request to the ByteDance TTS API and returns the resulting speech
 	 * response.
 	 * @param request the speech prompt containing the input text and other parameters
 	 * @return the speech response containing the generated audio

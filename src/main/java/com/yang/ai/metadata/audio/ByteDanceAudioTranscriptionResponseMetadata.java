@@ -26,7 +26,7 @@ import org.springframework.util.Assert;
 import java.util.HashMap;
 
 /**
- * Audio transcription metadata implementation for {@literal OpenAI}.
+ * Audio transcription metadata implementation for {@literal ByteDance}.
  *
  * @author Michael Lavelle
  * @since 0.8.1
@@ -40,13 +40,13 @@ public class ByteDanceAudioTranscriptionResponseMetadata extends HashMap<String,
 	};
 
 	public static ByteDanceAudioTranscriptionResponseMetadata from(ByteDanceAudioApi.StructuredResponse result) {
-		Assert.notNull(result, "OpenAI Transcription must not be null");
+		Assert.notNull(result, "ByteDance Transcription must not be null");
 		ByteDanceAudioTranscriptionResponseMetadata transcriptionResponseMetadata = new ByteDanceAudioTranscriptionResponseMetadata();
 		return transcriptionResponseMetadata;
 	}
 
 	public static ByteDanceAudioTranscriptionResponseMetadata from(String result) {
-		Assert.notNull(result, "OpenAI Transcription must not be null");
+		Assert.notNull(result, "ByteDance Transcription must not be null");
 		ByteDanceAudioTranscriptionResponseMetadata transcriptionResponseMetadata = new ByteDanceAudioTranscriptionResponseMetadata();
 		return transcriptionResponseMetadata;
 	}

@@ -83,8 +83,6 @@ public class ByteDanceRetryTests {
 
 	private @Mock ByteDanceAudioApi byteDanceAudioApi;
 
-//	private @Mock ByteDanceImageApi openAiImageApi;
-
 	private ByteDanceChatModel chatModel;
 
 //	private ByteDanceEmbeddingModel embeddingModel;

@@ -27,6 +27,7 @@ import org.springframework.ai.chat.model.Generation;
 import org.springframework.ai.chat.model.StreamingChatModel;
 import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.ai.chat.prompt.Prompt;
+import org.springframework.ai.model.ModelOptions;
 import org.springframework.ai.model.ModelOptionsUtils;
 import org.springframework.ai.model.function.AbstractFunctionCallSupport;
 import org.springframework.ai.model.function.FunctionCallbackContext;
@@ -242,9 +243,8 @@ public class ByteDanceChatModel extends
 
         if (prompt.getOptions() != null) {
             if (prompt.getOptions() != null) {
-                ChatOptions runtimeOptions = prompt.getOptions();
-                ByteDanceChatOptions updatedRuntimeOptions = ModelOptionsUtils.copyToTarget(runtimeOptions,
-                        ChatOptions.class, ByteDanceChatOptions.class);
+                ByteDanceChatOptions updatedRuntimeOptions = ModelOptionsUtils.copyToTarget(prompt.getOptions(),
+                        ModelOptions.class, ByteDanceChatOptions.class);
 
                 request = ModelOptionsUtils.merge(updatedRuntimeOptions, request, ByteDanceChatApi.ChatCompletionRequest.class);
             } else {

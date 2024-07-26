@@ -26,7 +26,7 @@ import org.springframework.util.Assert;
 import java.util.HashMap;
 
 /**
- * Audio speech metadata implementation for {@literal OpenAI}.
+ * Audio speech metadata implementation for {@literal ByteDance}.
  *
  * @author Ahmed Yousri
  * @see RateLimit

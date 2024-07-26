@@ -19,7 +19,7 @@ import java.util.Objects;
 
 /**
  * The {@link SpeechMessage} class represents a single text message to be converted to
- * speech by the OpenAI TTS API.
+ * speech by the ByteDance TTS API.
  *
  * @author Ahmed Yousri
  * @since 1.0.0-M1

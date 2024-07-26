@@ -55,6 +55,7 @@ public class ByteDanceTestConfiguration {
 
 	@Bean
 	public ByteDanceAudioSpeechModel byteDanceAudioSpeechModel(ByteDanceAudioApi api) {
-        return new ByteDanceAudioSpeechModel(api);
+		String appId = System.getenv("BYTE_DANCE_SPEECH_APP_ID");
+        return new ByteDanceAudioSpeechModel(api, appId, "BV700_streaming");
 	}
 }

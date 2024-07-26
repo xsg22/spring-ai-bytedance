@@ -54,7 +54,7 @@ import java.util.stream.Collectors;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(classes = ByteDanceTestConfiguration.class)
-@EnabledIfEnvironmentVariable(named = "OPENAI_API_KEY", matches = ".+")
+@EnabledIfEnvironmentVariable(named = "BYTE_DANCE_API_KEY", matches = ".+")
 class ByteDanceChatModelIT extends AbstractIT {
 
 	private static final Logger logger = LoggerFactory.getLogger(ByteDanceChatModelIT.class);
