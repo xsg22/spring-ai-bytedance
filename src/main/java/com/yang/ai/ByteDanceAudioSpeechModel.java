@@ -138,9 +138,10 @@ public class ByteDanceAudioSpeechModel implements SpeechModel, StreamingSpeechMo
      */
     @Override
     public Flux<SpeechResponse> stream(SpeechPrompt prompt) {
-        return this.audioApi.stream(this.createRequestBody(prompt))
-                .map(entity -> new SpeechResponse(new Speech(entity.getBody()), new ByteDanceAudioSpeechResponseMetadata(
-                        ByteDanceResponseHeaderExtractor.extractAiResponseHeaders(entity))));
+        throw new UnsupportedOperationException();
+//        return this.audioApi.stream(this.createRequestBody(prompt))
+//                .map(entity -> new SpeechResponse(new Speech(entity.getBody()), new ByteDanceAudioSpeechResponseMetadata(
+//                        ByteDanceResponseHeaderExtractor.extractAiResponseHeaders(entity))));
     }
 
     private ByteDanceAudioApi.SpeechRequest createRequestBody(SpeechPrompt request) {

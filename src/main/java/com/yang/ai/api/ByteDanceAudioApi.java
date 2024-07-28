@@ -697,7 +697,7 @@ public class ByteDanceAudioApi {
     public Flux<ResponseEntity<byte[]>> stream(SpeechRequest requestBody) {
 
         return webClient.post()
-                .uri("/v1/audio/speech")
+                .uri("/api/v1/tts/ws_binary")
                 .body(Mono.just(requestBody), SpeechRequest.class)
                 .accept(MediaType.APPLICATION_OCTET_STREAM)
                 .exchangeToFlux(clientResponse -> {

@@ -35,7 +35,7 @@ public class ByteDanceTestConfiguration {
 	}
 
 	private String getApiKey() {
-		String apiKey = System.getenv("BYTE_DANCE_API_KEY");
+		String apiKey = System.getenv("BYTE_DANCE_SPEECH_API_KEY");
 		if (!StringUtils.hasText(apiKey)) {
 			throw new IllegalArgumentException(
 					"You must provide an API key.  Put it in an environment variable under the name BYTE_DANCE_API_KEY");
