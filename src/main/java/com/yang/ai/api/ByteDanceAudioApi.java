@@ -41,8 +41,6 @@ import java.util.List;
  * Turn audio into text or text into audio. Based on
  * <a href="https://www.volcengine.com/docs/6561/79820">ByteDance Audio</a>
  *
- * @author Christian Tzolov
- * @since 0.8.1
  */
 public class ByteDanceAudioApi {
 

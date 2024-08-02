@@ -25,9 +25,6 @@ import java.util.Objects;
 
 /**
  * Creates a new instance of SpeechResponse with the given speech result.
- *
- * @author Ahmed Yousri
- * @since 1.0.0-M1
  */
 public class SpeechResponse implements ModelResponse<Speech> {
 

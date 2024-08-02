@@ -25,9 +25,6 @@ import java.util.Objects;
  * The {@link SpeechPrompt} class represents a request to the ByteDance Text-to-Speech (TTS)
  * API. It contains a list of {@link SpeechMessage} objects, each representing a piece of
  * text to be converted to speech.
- *
- * @author Ahmed Yousri
- * @since 1.0.0-M1
  */
 public class SpeechPrompt implements ModelRequest<SpeechMessage> {
 

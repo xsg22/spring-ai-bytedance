@@ -25,9 +25,6 @@ import java.util.Objects;
 /**
  * The Speech class represents the result of speech synthesis from an AI model. It
  * implements the ModelResult interface with the output type of byte array.
- *
- * @author Ahmed Yousri
- * @since 1.0.0-M1
  */
 public class Speech implements ModelResult<byte[]> {
 

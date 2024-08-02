@@ -23,9 +23,6 @@ import reactor.core.publisher.Flux;
  * The {@link StreamingSpeechModel} interface provides a way to interact with the ByteDance
  * Text-to-Speech (TTS) API using a streaming approach, allowing you to receive the
  * generated audio in a real-time fashion.
- *
- * @author Ahmed Yousri
- * @since 1.0.0-M1
  */
 @FunctionalInterface
 public interface StreamingSpeechModel extends StreamingModel<SpeechPrompt, SpeechResponse> {

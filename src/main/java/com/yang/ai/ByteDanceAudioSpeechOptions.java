@@ -27,10 +27,6 @@ import java.util.Objects;
 
 /**
  * Options for ByteDance text to audio - speech synthesis.
- *
- * @author Ahmed Yousri
- * @author Hyunjoon Choi
- * @since 1.0.0-M1
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ByteDanceAudioSpeechOptions implements ModelOptions {

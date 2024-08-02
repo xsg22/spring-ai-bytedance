@@ -35,11 +35,6 @@ import java.util.UUID;
 
 /**
  * ByteDance audio speech client implementation for backed by {@link ByteDanceAudioApi}.
- *
- * @author Ahmed Yousri
- * @author Hyunjoon Choi
- * @see ByteDanceAudioApi
- * @since 1.0.0-M1
  */
 public class ByteDanceAudioSpeechModel implements SpeechModel, StreamingSpeechModel {
 

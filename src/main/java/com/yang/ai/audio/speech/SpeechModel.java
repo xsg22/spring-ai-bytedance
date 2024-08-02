@@ -22,9 +22,6 @@ import org.springframework.ai.model.Model;
  * The {@link SpeechModel} interface provides a way to interact with the ByteDance
  * Text-to-Speech (TTS) API. It allows you to convert text input into lifelike spoken
  * audio.
- *
- * @author Ahmed Yousri
- * @since 1.0.0-M1
  */
 @FunctionalInterface
 public interface SpeechModel extends Model<SpeechPrompt, SpeechResponse> {
